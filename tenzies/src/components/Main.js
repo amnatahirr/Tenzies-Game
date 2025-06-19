@@ -4,7 +4,9 @@ import { nanoid } from 'nanoid';
 import Confetti from 'react-confetti';
 export default function Main() {
     const [numbers,setNumbers]=useState(allNewDice());
+
     const [tenzies,setTenzies]=useState(false);
+
     useEffect(()=>{
         const heldDice=numbers.every(die=>die.isHeld);
         const firstValue=numbers[0].value;
@@ -22,6 +24,7 @@ export default function Main() {
         return arr;
         
     }
+    
     function generateNewDice(){
         return {
             value:Math.ceil(Math.random()*6),
